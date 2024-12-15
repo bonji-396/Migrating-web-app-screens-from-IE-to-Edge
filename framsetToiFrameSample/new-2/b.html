@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B Frame</title>
+</head>
+<body>
+  <h1>B</h1>
+  <input type="button" id="toggleButton" value="<<" />
+  <script>
+    document.getElementById('toggleButton').addEventListener('click', function () {
+      const iframeA = parent.document.getElementById('iframeA');
+      const button = document.getElementById('toggleButton');
+
+      if (iframeA.classList.contains('hidden')) {
+        // 元に戻す
+        iframeA.classList.remove('hidden');
+        iframeA.style.width = '30%';
+        button.value = '<<';
+      } else {
+        // 非表示にする
+        iframeA.classList.add('hidden');
+        iframeA.style.width = '0';
+        button.value = '>>';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frame Example</title>
+</head>
+<frameset id="frm" cols="30%, 70%">
+  <frame id="frameA" src="a.html" />
+  <frame id="frameB" src="b.html" />
+</frameset>
+<script>
+  // スクリプトでframeのサイズを操作
+  function toggleFrame() {
+    var frameset = document.getElementById('frm');
+    var button = parent.frames['frameB'].document.querySelector('input[type="button"]');
+    if (frameset.cols === "30%, 70%") {
+      frameset.cols = "0, 100%";
+      button.value = ">>";
+    } else {
+      frameset.cols = "30%, 70%";
+      button.value = "<<";
+    }
+  }
+</script>
+</html>

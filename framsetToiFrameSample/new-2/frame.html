@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frame to iFrame Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #container {
+      display: flex;
+      height: 100vh;
+    }
+    #iframeA {
+      width: 30%;
+      height: 100%;
+      border: none;
+      transition: width 0.3s ease;
+    }
+    #iframeB {
+      flex-grow: 1;
+      height: 100%;
+      border: none;
+    }
+    .hidden {
+      width: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <iframe id="iframeA" src="a.html"></iframe>
+    <iframe id="iframeB" src="b.html"></iframe>
+  </div>
+  <script src="./cmn.js"></script>
+</body>
+</html>
